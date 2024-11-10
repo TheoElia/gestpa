@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="professional development, gset">
+	<meta name="description" content="GSET Members' Professional Development Portal">
+    <meta property="og:site_name" content="GSET">
+    <meta property="og:url" content="https://www.gset.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GSET | Members' Professional Development Portal">
+	<meta name='og:image' content='/static/images/assets/ogg.png'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#244034">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#244034">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#244034">
+	<title>GSET | Members' Professional Development Portal</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="56x56" href="/static/images/fav-icon/icon.png">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" media="all">
+	<!-- Main style sheet -->
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" media="all">
+	<!-- responsive style sheet -->
+	<link rel="stylesheet" type="text/css" href="/static/css/responsive.css" media="all">
+
+	<!-- Fix Internet Explorer ______________________________________-->
+	<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="/static/vendor/html5shiv.js"></script>
+			<script src="/static/vendor/respond.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+		<div id="preloader">
+			<div id="ctn-preloader" class="ctn-preloader">
+				<!-- <div class="icon"><img src="/static/images/loader.svg" alt="" class="m-auto d-block" width="60"></div> -->
+				<div class="txt-loading">
+					<span data-text-preloader="G" class="letters-loading">
+						G
+					</span>
+					<span data-text-preloader="S" class="letters-loading">
+						S
+					</span>
+					<span data-text-preloader="E" class="letters-loading">
+						E
+					</span>
+					<span data-text-preloader="T" class="letters-loading">
+						T
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- 
+		=============================================
+				Theme Main Menu
+		============================================== 
+		-->
+		<header class="theme-main-menu menu-overlay menu-style-one sticky-menu">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center">
+						<div class="logo order-lg-0">
+							<a href="/" class="d-flex align-items-center">
+								<img src="/static/dashboard/images/gset-logo.png" style="height: 50px;width: 100px;" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+						<div class="right-widget ms-auto order-lg-3">
+							<ul class="d-flex align-items-center style-none">
+								<!-- <li class="d-none d-md-block"><a href="dashboard/employer-dashboard-submit-job.html" class="job-post-btn tran3s">Post Job</a></li> -->
+								<!-- <li><a href="#" class="login-btn-one" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li> -->
+								<li class="d-none d-md-block ms-4"><a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn-one">Login</a></li>
+							</ul>
+						</div> <!--/.right-widget-->
+						<nav class="navbar navbar-expand-lg p0 ms-lg-5 ms-3 order-lg-2">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none"><div class="logo">
+										<a href="/" class="d-block"><img src="/static/images/logo/logo_01.png" alt="" width="100"></a></div>
+									</li>
+									<li class="nav-item dropdown dashboard-menu">
+										<a class="nav-link " href="/member-dashboard" role="button" 
+											data-bs-auto-close="outside" aria-expanded="false"> Dashboard
+										</a>
+									</li>
+
+									
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div> <!--/.top-header-->
+			</div> <!-- /.inner-content -->
+		</header> <!-- /.theme-main-menu -->
+
+{% block content %}
+{% endblock content %}
+
+
+		<!--
+		=====================================================
+			Footer One
+		=====================================================
+		-->
+		<div class="footer-one">
+			<div class="container">
+				<div class="inner-wrapper">
+					<div class="row">
+						<div class="col-lg-2 col-md-3 footer-intro mb-15">
+							<div class="logo mb-15">
+								<a href="index.html" class="d-flex align-items-center">
+									<img src="/static/dashboard/images/gset-logo.png" alt="">
+								</a>
+							</div> 
+							<img src="/static/images/lazy.svg" data-src="/static/images/shape/shape_28.svg" alt="" class="lazy-img mt-80 sm-mt-30 sm-mb-20">
+							<!-- logo -->
+						</div>
+						<div class="col-lg-2 col-md-3 col-sm-4 mb-20">
+							<h5 class="footer-title">Services​</h5>
+							<ul class="footer-nav-link style-none">
+								<li><a href="job-grid-v2.html">Browse Jobs</a></li>
+								<li><a href="company-v1.html">Companies</a></li>
+								<li><a href="candidates-v1.html">Candidates</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-2 col-md-3 col-sm-4 mb-20">
+							<h5 class="footer-title">Company</h5>
+							<ul class="footer-nav-link style-none">
+								<li><a href="about-us.html">About us</a></li>
+								<li><a href="blog-v2.html">Blogs</a></li>
+								<li><a href="faq.html">FAQ’s</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-2 col-md-3 col-sm-4 mb-20">
+							<h5 class="footer-title">Support</h5>
+							<ul class="footer-nav-link style-none">
+								<li><a href="contact.html">Terms of use</a></li>
+								<li><a href="contact.html">Terms & conditions</a></li>
+								<li><a href="contact.html">Privacy</a></li>
+								<li><a href="contact.html">Cookie policy</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-4 mb-20 footer-newsletter">
+							<h5 class="footer-title">Newsletter</h5>
+							<p>Join & get important new regularly</p>
+							<form action="#" class="d-flex">
+								<input type="email" placeholder="Enter your email*">
+								<button>Send</button>
+							</form>
+							<p class="note">We only send interesting and relevant emails.</p>
+						</div>
+					</div>
+				</div> <!-- /.inner-wrapper -->
+			</div>
+			<div class="bottom-footer">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-4 order-lg-3 mb-15">
+							<ul class="style-none d-flex order-lg-last justify-content-center justify-content-lg-end social-icon">
+								<li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
+								<li><a href="#"><i class="bi bi-dribbble"></i></a></li>
+								<li><a href="#"><i class="bi bi-google"></i></a></li>
+								<li><a href="#"><i class="bi bi-instagram"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-lg-4 order-lg-1 mb-15">
+							<ul class="d-flex style-none bottom-nav justify-content-center justify-content-lg-start">
+								<li><a href="contact.html">Privacy & Terms.</a></li>
+								<li><a href="contact.html"> Contact Us</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-4 order-lg-2">
+							<p class="text-center mb-15">Copyright @2023 jobi inc.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.footer-one -->
+
+
+		<!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="container">
+                    <div class="user-data-form modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="text-center">
+							<h2>Hi, Welcome Back!</h2>
+							<p>Still don't have an account? <a href="/signup">Sign up</a></p>
+							<p id="errors" hidden style="padding: 10px;background-color: rgb(230, 191, 191);color: red;border-radius: 15px;"></p>
+							<p id="success" hidden style="padding: 10px;background-color: rgb(191, 230, 212);color: rgb(0, 173, 23);border-radius: 15px;"></p>
+						</div>
+						<div class="form-wrapper m-auto">
+							<form action="#" method="dialog" class="mt-10" id="login_form">
+								<div class="row">
+									<div class="col-12">
+										<div class="input-group-meta position-relative mb-25">
+											<label>Email*</label>
+											<input type="email" id="login_email" name="email" placeholder="rshdkabir@gmail.com" required>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="input-group-meta position-relative mb-20">
+											<label>Password*</label>
+											<input type="password" id="login_password" name="password" placeholder="Enter Password" class="pass_log_id" required>
+											<span class="placeholder_icon"><span class="passVicon"><img src="/static/images/icon/icon_60.svg" alt=""></span></span>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="agreement-checkbox d-flex justify-content-between align-items-center">
+											<div>
+												<input type="checkbox" id="remember">
+												<label for="remember">Keep me logged in</label>
+											</div>
+											<a href="#">Forget Password?</a>
+										</div> 
+										<!-- /.agreement-checkbox -->
+									</div>
+									<div class="col-12">
+										<button id="login_submit_btn" type="submit" onclick="submitLoginForm()" class="btn-eleven fw-500 tran3s d-block mt-20">Login</button>
+									</div>
+								</div>
+							</form>
+							<div class="d-flex align-items-center mt-30 mb-10">
+								<div class="line"></div>
+								<span class="pe-3 ps-3">OR</span>
+								<div class="line"></div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="/static/images/icon/google.png" alt="">
+										<span class="ps-2">Login with Google</span>
+									</a>
+								</div>
+								<!-- <div class="col-md-6">
+									<a href="#" class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="/static/images/icon/facebook.png" alt="">
+										<span class="ps-2">Login with Facebook</span>
+									</a>
+								</div> -->
+							</div>
+							<p class="text-center mt-10">Don't have an account? <a href="/signup" class="fw-500">Sign up</a></p>
+						</div>
+						<!-- /.form-wrapper -->
+                    </div>
+                    <!-- /.user-data-form -->
+                </div>
+            </div>
+        </div>
+
+
+		<button class="scroll-top">
+			<i class="bi bi-arrow-up-short"></i>
+		</button>
+
+
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="/static/vendor/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- WOW js -->
+		<script src="/static/vendor/wow/wow.min.js"></script>
+		<!-- Slick Slider -->
+		<script src="/static/vendor/slick/slick.min.js"></script>
+		<!-- Fancybox -->
+		<script src="/static/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<!-- Lazy -->
+		<script src="/static/vendor/jquery.lazy.min.js"></script>
+		<!-- js Counter -->
+		<script src="/static/vendor/jquery.counterup.min.js"></script>
+		<script src="/static/vendor/jquery.waypoints.min.js"></script>
+		<!-- Nice Select -->
+		<script src="/static/vendor/nice-select/jquery.nice-select.min.js"></script>
+		<!-- validator js -->
+		<script src="/static/vendor/validator.js"></script>
+
+		<!-- Theme js -->
+		<script src="/static/js/theme.js"></script>
+		<script src="/static/js/axios.min.js"></script>
+		<script src="/static/js/api_calls.js"></script>
+		<script src="/static/js/utils.js"></script>
+		<script>
+			function submitLoginForm(){
+				$("#login_submit_btn").html("Logging In ...");
+				$("#login_submit_btn").attr("disabled",true);
+				$("#login_form").submit();
+				$("#errors").attr("hidden",true);
+			}
+			$("#login_form").on("submit",function(event){
+				var form = buildForm("login_form");
+				var url = "/api/client/auth/account/login"
+				makePostApiRequest(loginCallback,url,form)
+				
+				console.log(form);
+			});
+
+			function loginCallback(response){
+				$("#login_submit_btn").html("Login");
+				$("#login_submit_btn").attr("disabled",false);
+				var errors = "";
+				if(response.status >= 200 && response.status <=300){
+					var success = "Login Successful"
+					// it was okay
+					$("#success").attr("hidden",false);
+					$("#success").html(success);
+					var headers = response.headers;
+					console.log(headers)
+					localStorage.setItem("auth_token",headers['set-auth-token']);
+					window.location.assign("/member-dashboard");
+				}
+				if(response.status == 400){
+					// bad request, look for errors
+					response.data.non_field_errors.forEach(element => {
+						errors += element
+					});
+				// show the error
+				$("#errors").attr("hidden",false);
+				$("#errors").html(errors);
+				}
+			}
+
+			function submitLogin1Form(){
+				$("#login1_submit_btn").html("Logging In ...");
+				$("#login1_submit_btn").attr("disabled",true);
+				$("#login1_form").submit();
+				$("#errors1").attr("hidden",true);
+			}
+			$("#login1_form").on("submit",function(event){
+				var form = buildForm("login1_form");
+				var url = "/api/client/auth/account/login"
+				makePostApiRequest(loginCallback1,url,form)
+				
+				console.log(form);
+			});
+
+			function loginCallback1(response){
+				$("#login1_submit_btn").html("Login");
+				$("#login1_submit_btn").attr("disabled",false);
+				var errors = "";
+				if(response.status >= 200 && response.status <=300){
+					var success = "Login Successful"
+					// it was okay
+					$("#success1").attr("hidden",false);
+					$("#success1").html(success);
+					var headers = response.headers;
+					console.log(headers)
+					localStorage.setItem("auth_token",headers['set-auth-token']);
+					window.location.assign("/member-dashboard");
+				}
+				if(response.status == 400){
+					// bad request, look for errors
+					response.data.non_field_errors.forEach(element => {
+						errors += element
+					});
+				// show the error
+				$("#errors1").attr("hidden",false);
+				$("#errors1").html(errors);
+				}
+			}
+
+			function loginCallback(response){
+				$("#login_submit_btn").html("Login");
+				$("#login_submit_btn").attr("disabled",false);
+				var errors = "";
+				if(response.status >= 200 && response.status <=300){
+					var success = "Login Successful"
+					// it was okay
+					$("#success").attr("hidden",false);
+					$("#success").html(success);
+					var headers = response.headers;
+					console.log(headers)
+					localStorage.setItem("auth_token",headers['set-auth-token']);
+					window.location.assign("/member-dashboard");
+				}
+				if(response.status == 400){
+					// bad request, look for errors
+					response.data.non_field_errors.forEach(element => {
+						errors += element
+					});
+				// show the error
+				$("#errors").attr("hidden",false);
+				$("#errors").html(errors);
+				}
+			}
+
+			function submitSignupForm(){
+				$("#signup_submit_btn").html("Registering ...");
+				$("#signup_submit_btn").attr("disabled",true);
+				$("#signup_form").submit();
+				$("#signup_errors").attr("hidden",true);
+			}
+
+			$("#signup_form").on("submit",function(event){
+				var form = buildForm("signup_form");
+				var url = "/api/client/auth/account/signup"
+				makePostApiRequest(signupCallback,url,form)
+				console.log(form);
+			});
+
+			function signupCallback(response){
+				$("#signup_submit_btn").html("Login");
+				$("#signup_submit_btn").attr("disabled",false);
+				var errors = "";
+				if(response.status >= 200 && response.status <=300){
+					var success = "Registration Successful"
+					// it was okay
+					$("#signup_success").attr("hidden",false);
+					$("#signup_success").html(success);
+					// redirect the person to dashboard
+					// set access token
+					var headers = response.headers;
+					localStorage.setItem("auth_token",headers.set-auth-token);
+					window.location.assign("/member-dashboard");
+				}
+				if(response.status == 400){
+					// bad request, look for errors
+					response.data.non_field_errors.forEach(element => {
+						errors += element
+					});
+				// show the error
+				$("#signup_errors").attr("hidden",false);
+				$("#signup_errors").html(errors);
+				}
+			}
+		</script>
+	</div> 
+	<!-- /.main-page-wrapper -->
+</body>
+
+</html>

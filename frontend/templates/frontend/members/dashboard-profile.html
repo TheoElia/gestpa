@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
+	<meta name="description" content="Jobi is a beautiful website template designed for job board websites.">
+    <meta property="og:site_name" content="Jano">
+    <meta property="og:url" content="https://creativegigstf.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jobi - Responsive Job Board HTML Template">
+	<meta name='og:image' content='/static/images/assets/ogg.png'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#244034">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#244034">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#244034">
+	<title>GSET |  Member Dashboard</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="56x56" href="/static/images/fav-icon/icon.png">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" media="all">
+	<!-- Main style sheet -->
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" media="all">
+	<!-- responsive style sheet -->
+	<link rel="stylesheet" type="text/css" href="/static/css/responsive.css" media="all">
+
+	<!-- Fix Internet Explorer ______________________________________-->
+	<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="vendor/html5shiv.js"></script>
+			<script src="vendor/respond.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+		<div id="preloader">
+			<div id="ctn-preloader" class="ctn-preloader">
+				<!-- <div class="icon">
+					<img src="/static/images/loader.svg" alt="" class="m-auto d-block" width="60">
+				</div> -->
+				<div class="txt-loading">
+					<span data-text-preloader="G" class="letters-loading">
+						G
+					</span>
+					<span data-text-preloader="S" class="letters-loading">
+						S
+					</span>
+					<span data-text-preloader="E" class="letters-loading">
+						E
+					</span>
+					<span data-text-preloader="T" class="letters-loading">
+						T
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- 
+		=============================================
+				Dashboard Aside Menu
+		============================================== 
+		-->
+		<aside class="dash-aside-navbar">
+			<div class="position-relative">
+				<div class="logo text-md-center d-md-block d-flex align-items-center justify-content-between">
+					<a href="/">
+						<img  src="/static/dashboard/images/gset-logo.png" style="height: 50px;width: 100px;" alt="">
+					</a>
+					<button class="close-btn d-block d-md-none"><i class="bi bi-x-lg"></i></button>
+				</div>
+				<div class="user-data">
+					<div class="user-avatar online position-relative rounded-circle">
+						<img id="profile_photo" src="/static/images/lazy.svg" data-src="/static/dashboard/images/avatar_01.jpg" height="80px" width="70px" alt="" class="lazy-img">
+					</div>
+					<!-- /.user-avatar -->
+					<div class="user-name-data">
+						<button class="user-name dropdown-toggle" type="button" id="profile-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+							Rashed Kabir
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="profile-dropdown">
+						    <li>
+                                <a class="dropdown-item d-flex align-items-center" href="candidate-dashboard-profile.html"><img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_23.svg" alt="" class="lazy-img"><span class="ms-2 ps-1">Profile</span></a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="candidate-dashboard-settings.html"><img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_24.svg" alt="" class="lazy-img"><span class="ms-2 ps-1">Account Settings</span></a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="#"><img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_25.svg" alt="" class="lazy-img"><span class="ms-2 ps-1">Notification</span></a>
+                            </li>
+						</ul>
+					</div>
+				</div>
+				<!-- /.user-data -->
+				<nav class="dasboard-main-nav">
+					<ul class="style-none">
+						
+						<li><a href="javascript:void(0);" class="d-flex w-100 align-items-center active">
+							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_2_active.svg" alt="" class="lazy-img">
+							<span>My Profile</span>
+						</a></li>
+						<!-- <li><a href="candidate-dashboard-message.html" class="d-flex w-100 align-items-center">
+							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_4.svg" alt="" class="lazy-img">
+							<span>Messages</span>
+						</a></li> -->
+						<li><a href="/member-courses" class="d-flex w-100 align-items-center">
+							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_3.svg" alt="" class="lazy-img">
+							<span>Courses</span>
+						</a></li>
+						<li><a href="javascript:void(0);" class="d-flex w-100 align-items-center">
+							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_6.svg" alt="" class="lazy-img">
+							<span>Jobs</span>
+						</a></li>
+						<li><a href="javascript:void(0);" class="d-flex w-100 align-items-center" data-bs-toggle="modal" data-bs-target="#deleteModal">
+							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_8.svg" alt="" class="lazy-img">
+							<span>Delete Account</span>
+						</a></li>
+					</ul>
+				</nav>
+				<!-- /.dasboard-main-nav -->
+				<div class="profile-complete-status">
+					<div class="progress-value fw-500">87%</div>
+					<div class="progress-line position-relative">
+						<div class="inner-line" style="width:80%;"></div>
+					</div>
+					<p>Profile Complete</p>
+				</div>
+				<!-- /.profile-complete-status -->
+
+				<a href="/login" class="d-flex w-100 align-items-center logout-btn">
+					<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_9.svg" alt="" class="lazy-img">
+					<span>Logout</span>
+				</a>
+			</div>
+		</aside>
+		<!-- /.dash-aside-navbar -->
+
+		<!-- 
+		=============================================
+			Dashboard Body
+		============================================== 
+		-->
+		<div class="dashboard-body">
+			<div class="position-relative">
+				<!-- ************************ Header **************************** -->
+				<header class="dashboard-header">
+					<div class="d-flex align-items-center justify-content-end">
+						<button class="dash-mobile-nav-toggler d-block d-md-none me-auto">
+							<span></span>
+						</button>
+						<form action="#" class="search-form">
+							<input type="text" placeholder="Search here..">
+							<button><img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_10.svg" alt="" class="lazy-img m-auto"></button>
+						</form>
+						<div class="profile-notification ms-2 ms-md-5 me-4">
+							<button class="noti-btn dropdown-toggle" type="button" id="notification-dropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+								<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_11.svg" alt="" class="lazy-img">
+								<div class="badge-pill"></div>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="notification-dropdown">
+								<li>
+									<h4>Notification</h4>
+									<ul class="style-none notify-list">
+										<li class="d-flex align-items-center unread">
+											<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_36.svg" alt="" class="lazy-img icon">
+											<div class="flex-fill ps-2">
+												<h6>You have 3 new mails</h6>
+												<span class="time">3 hours ago</span>
+											</div>
+										</li>
+										<li class="d-flex align-items-center">
+											<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_37.svg" alt="" class="lazy-img icon">
+											<div class="flex-fill ps-2">
+												<h6>Your job post has been approved</h6>
+												<span class="time">1 day ago</span>
+											</div>
+										</li>
+										<li class="d-flex align-items-center unread">
+											<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_38.svg" alt="" class="lazy-img icon">
+											<div class="flex-fill ps-2">
+												<h6>Your meeting is cancelled</h6>
+												<span class="time">3 days ago</span>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div><a href="employer-dashboard-submit-job.html" class="job-post-btn tran3s">Post a Job</a></div>
+					</div>
+				</header>
+				<!-- End Header -->
+
+				<h2 class="main-title">My Profile</h2>
+				<!-- USER PROFILE STARTS -->
+				<div class="bg-white card-box border-20">
+                    <div class="user-avatar-setting d-flex align-items-center mb-30">
+                        <img src="/static/images/lazy.svg" id="photo_preview" data-src="/static/dashboard/images/avatar_02.jpg" alt="" class="lazy-img user-img">
+                        <div class="upload-btn position-relative tran3s ms-4 me-3">
+                            Upload new photo
+                            <input type="file" id="uploadImg" name="uploadImg" placeholder="">
+                        </div>
+                        <button class="delete-btn tran3s">Delete</button>
+						<!-- /.user-avatar-setting -->
+                    </div>
+					<p id="errors" hidden style="padding: 10px;background-color: rgb(230, 191, 191);color: red;border-radius: 15px;"></p>
+					<p id="success" hidden style="padding: 10px;background-color: rgb(191, 230, 212);color: rgb(0, 173, 23);border-radius: 15px;"></p>
+				<form action="#" method="dialog" id="update_profile_form">
+					<div class="row">
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<label for="">First Name*</label>
+							<input type="text" name="first_name" id="first_name" placeholder="Josefina">
+						</div>
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<label for="">Last Name*</label>
+							<input type="text" name="last_name" id="last_name" placeholder="Boateng">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<label for="">Other Name*</label>
+							<input type="text" name="middle_name" id="middle_name" placeholder="Agyekum">
+						</div>
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<label for="">Date of Birth*</label>
+							<input type="date" name="date_of_birth" id="date_of_birth"  placeholder="1996-12-21">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<label for="">Email*</label>
+							<input type="email" name="email" id="email" placeholder="josefina@gmail.com">
+						</div>
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<label for="">Phone Number*</label>
+							<input type="email" name="phone_number" id="phone_number" placeholder="+233500459013">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<label for="">Current Institution</label>
+							<input type="text" name="current_institution" id="current_institution" placeholder="Accra Girls">
+						</div>
+						<div class="col-md-6 dash-input-wrapper mb-30">
+							<div class="dash-input-wrapper mb-25">
+								<label for="region_of_institution">Region of Institution: <span id="region"></span></label>
+								
+								<select class="nice-select" name="region_of_institution" id="region_of_institution">
+									<option value="" disabled selected>Select A Region</option>
+									{% for region in regions %}
+										<option value="{{region.id}}">{{region.name}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="dash-input-wrapper mb-20">
+                        <label for="">LinkedIn</label>
+                        <input type="text" name="linkedin_profile" id="linkedin_profile" placeholder="https://www.linkedin.com/zubayer0145">
+                    </div>
+
+					
+
+                    
+                    <div class="dash-input-wrapper">
+                        <label for="short_bio">Short Bio*</label>
+                        <textarea name="short_bio" id="short_bio" class="size-lg" placeholder="Write something interesting about you...."></textarea>
+						<div class="alert-text">Brief description for your profile..</div>
+                    </div>
+                    <!-- /.dash-input-wrapper -->
+					 <div class="row">
+						<div class="col-4 offset-8">
+							<div class="button-group d-inline-flex align-items-right mt-10" style="float: inline-end;">
+								<button id="update_profile_submit_btn" type="submit" onclick="submitUpdateProfileForm()" class="dash-btn-two tran3s me-3">Save Changes</button>
+							</div>
+						</div>
+					 </div>
+						
+				</form>
+                <!-- USER PROFILE ENDS -->
+                </div>
+
+				<div class="bg-white card-box border-20 mt-40">
+					<h4 class="dash-title-three">Resume Attachment</h4>
+					<div class="dash-input-wrapper mb-20">
+						<label for="">CV Attachment*</label>
+						<div id="resumes"></div>
+					</div>
+					<div class="dash-btn-one d-inline-block position-relative me-3">
+						<i class="bi bi-plus"></i>
+						Upload New CV
+						<input type="file" id="uploadCV" name="uploadCV" placeholder="">
+					</div>
+					<small>Upload file .pdf, .doc, .docx</small>
+				</div>
+
+				<!-- /.card-box -->
+				 <form id="affiliations_form" method="dialog" action="#">
+				<div class="bg-white card-box border-20 mt-40">
+                    <h4 class="dash-title-three">Professional Affiliations</h4>
+					<div id="affiliations">
+						<div class="dash-input-wrapper mb-20">
+							<label for="">Association Name</label>
+							<input type="text" name="affiliation_0" placeholder="eg: GES" required="required">
+						</div>
+					</div>
+                    
+                    <!-- /.dash-input-wrapper -->
+					<button type="button" class="dash-btn-one" onclick="addNewAffiliationBox()"><i class="bi bi-plus"></i> Add more</button>
+					<div class="row">
+						<div class="col-4 offset-8">
+							<div class="button-group d-inline-flex align-items-right mt-10" style="float: inline-end;">
+								<button type="submit" id="affiliations_submit_btn" class="dash-btn-two tran3s me-3" onclick="submitAffiliations()">Save All</button>
+							</div>	
+						</div>			
+					</div>
+                </div>
+				<!-- /.card-box -->
+			</form>
+
+				
+		</div>
+		<!-- /.dashboard-body -->
+
+
+
+
+		<!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="container">
+                    <div class="remove-account-popup text-center modal-content">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_22.svg" alt="" class="lazy-img m-auto">
+						<h2>Are you sure?</h2>
+						<p>Are you sure to delete your account? All data will be lost.</p>
+						<div class="button-group d-inline-flex justify-content-center align-items-center pt-15">
+							<a href="#" class="confirm-btn fw-500 tran3s me-3">Yes</a>
+							<button type="button" class="btn-close fw-500 ms-3" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+						</div>
+                    </div>
+                    <!-- /.remove-account-popup -->
+                </div>
+            </div>
+        </div>
+		
+
+
+		<button class="scroll-top">
+			<i class="bi bi-arrow-up-short"></i>
+		</button>
+		<div id="toast"></div>
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="/static/vendor/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- WOW js -->
+		<script src="/static/vendor/wow/wow.min.js"></script>
+		<!-- Slick Slider -->
+		<script src="/static/vendor/slick/slick.min.js"></script>
+		<!-- Fancybox -->
+		<script src="/static/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<!-- Lazy -->
+		<script src="/static/vendor/jquery.lazy.min.js"></script>
+		<!-- js Counter -->
+		<script src="/static/vendor/jquery.counterup.min.js"></script>
+		<script src="/static/vendor/jquery.waypoints.min.js"></script>
+		<!-- Nice Select -->
+		<script src="/static/vendor/nice-select/jquery.nice-select.min.js"></script>
+		<!-- validator js -->
+		<script src="/static/vendor/validator.js"></script>
+
+		<!-- Theme js -->
+		<script src="/static/js/theme.js"></script>
+		<script src="/static/js/axios.min.js"></script>
+		<script src="/static/js/utils.js"></script>
+		<script src="/static/js/api_calls.js"></script>
+		<script>
+			var token = localStorage.getItem("auth_token");
+			var user;
+			// if there's no access token, they must login
+			var headers = {Authorization: "Bearer "+token}
+			if(exists(token)){
+				// fetch user full profile
+				var url = "/api/client/auth/profile/self"
+				makeGetApiRequestwithToken(profileInfoCallback,url,headers)
+			}
+
+		function buildAffiliation(affiliation){
+			var _id = generateRandomString();
+			return `<div class="dash-input-wrapper mb-20" id="${_id}">
+                        <label for="">Association Name</label>
+						<div class="row">
+						<div class="col-10">
+							<input type="text" placeholder="eg: GES" value="${affiliation}" required>
+						</div>
+							<div class="col-2">
+								<button type="button" class="dash-btn-one" onclick="deleteAffiliationBox('${_id}','${affiliation}')"><i class="bi bi-bin"></i> Delete</button>
+							</div>	
+						</div>
+                        
+                    </div>`;
+		}
+
+		function profileInfoCallback(response){
+				if(response.status >= 200 && response.status <=300){
+					user = response.data;
+					var fields = ["first_name","last_name","email",
+					"middle_name","phone_number","date_of_birth","current_institution","short_bio","linkedin_profile","short_bio"];
+					fields.forEach(element => {
+						setFieldValue(element,user[""+element]);
+					});
+					if(exists(user.region_of_institution)){
+						$("#region_of_institution").val(user.region_of_institution);
+						var option = user.region_of_institution_name;
+						console.log(option);
+						$("#region").append(option);
+						
+					}else{
+						var option = `None Selected`;
+						console.log(option);
+						$("#region").append(option);
+						
+					}
+					if(exists(user.user_img)){
+						$("#photo_preview").attr("src",user.user_img);
+						$("#photo_preview").attr("data-src",user.user_img);
+						$("#profile_photo").attr("src",user.user_img);
+						$("#profile_photo").attr("data-src",user.user_img);
+						
+					}
+					if(exists(user.first_name)){
+						$("#profile-dropdown").html(user.first_name);
+					}else{
+						$("#profile-dropdown").html(user.email);
+					}
+					if(exists(user.professional_associations)){
+						user.professional_associations.forEach(affiliation => {
+							$("#affiliations").prepend(buildAffiliation(affiliation));
+						});
+					}
+					if(exists(user.resume)){
+						var html = `<div class="attached-file d-flex align-items-center justify-content-between">
+								<span><a href="${user.resume}">${user.resume}</a></span>
+								<a href="#" class="remove-btn"><i class="bi bi-x"></i></a>
+							</div>`;
+						$("#resumes").html(html);
+					}
+					console.log(response.data);
+				}
+				if(response.status == 400){
+					// bad request, look for errors
+					response.data.non_field_errors.forEach(element => {
+						errors += element
+					});
+			}
+		}
+
+		function profileInfoUpdateCallback(response){
+			$("#update_profile_submit_btn").html("Save Changes");
+			$("#update_profile_submit_btn").attr("disabled",false);
+			$("#affiliations_submit_btn").html("Save All");
+			$("#affiliations_submit_btn").attr("disabled",false);
+				if(response.status >= 200 && response.status <=300){
+					user = response.data;
+					if(exists(user.user_img)){
+						$("#photo_preview").attr("src",user.user_img);
+						$("#photo_preview").attr("data-src",user.user_img);
+						$("#profile_photo").attr("src",user.user_img);
+						$("#profile_photo").attr("data-src",user.user_img);
+					}
+					if(exists(user.resume)){
+						var html = `<div class="attached-file d-flex align-items-center justify-content-between">
+								<span><a href="${user.resume}">${user.resume}</a></span>
+								<a href="#" class="remove-btn"><i class="bi bi-x"></i></a>
+							</div>`;
+						$("#resumes").html(html);
+					}
+				}
+				if(response.status == 400){
+					console.log(response);
+					// bad request, look for errors
+					response.data.non_field_errors.forEach(element => {
+						errors += element
+					});
+			}
+		}
+
+		function submitUpdateProfileForm(){
+			$("#update_profile_submit_btn").html("Updating ...");
+			$("#update_profile_submit_btn").attr("disabled",true);
+			$("#update_profile_form").submit();
+			$("#errors").attr("hidden",true);
+		}
+
+		$("#update_profile_form").on("submit",function(event){
+			var Allform = buildForm("update_profile_form");
+			var form = {};
+			var affilations = [];
+			Object.entries(Allform).forEach(([key, value]) => {
+				if(exists(value) && value != ""){	
+						form[""+key] = value;	
+				}
+			});
+			form["affiliations"] = affilations;
+			var url = "/api/client/auth/profile/"+user.id;
+			console.log(form);
+			makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
+			
+		});
+
+		document.getElementById('uploadImg').addEventListener('change', function(event) {
+			const file = event.target.files[0];
+			if (file) {
+			const reader = new FileReader();
+			// Set up the reader to read the file as a data URL (base64)
+			reader.readAsDataURL(file);
+			reader.onload = function() {
+				const base64String = reader.result;
+				// Optionally, you could log or use the base64 string for other purposes
+				var url = "/api/client/auth/profile/"+user.id;
+
+				var form = {
+					user_img:base64String
+				}
+
+				makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
+			};
+
+			reader.onerror = function(error) {
+				console.error('Error: ', error);
+			};
+			} else {
+			console.log('No file selected');
+			}
+		});
+
+		function addNewAffiliationBox(){
+			var _id = generateRandomString();
+			var html = `<div class="dash-input-wrapper mb-20" id="${_id}">
+							<label for="">Association Name</label>
+							<div class="row">
+								<div class="col-10">
+									<input type="text" name="affiliation_${_id}" placeholder="eg: GES" required>
+								</div>
+								<div class="col-2">
+									<button href="javascript:void(0);" class="dash-btn-one" onclick="removeAffiliationBox('${_id}')"><i class="bi bi-bin"></i> Remove</button>
+								</div>	
+							</div>
+							
+							
+						</div>`;
+			$("#affiliations").append(html); 
+		}
+		function removeAffiliationBox(_id){
+			$("#"+_id).remove();
+		}
+		function deleteAffiliationBox(_id,affiliation){
+			var new_affiliations = user.professional_associations.filter(item => item !== affiliation);
+			var url = "/api/client/auth/profile/"+user.id;
+			var form = {
+				professional_associations:new_affiliations
+			}
+			makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
+			$("#"+_id).remove();
+		}
+
+		function submitAffiliations(){
+			var affilations_form = buildForm("affiliations_form");
+			for (const key of Object.keys(affilations_form)) {
+				var value = affilations_form[""+key];
+				console.log(value);
+				if(value.trim() == ''){	
+					console.log("here")
+					toast("Fill All Fields",3000);
+					return false;
+				}
+			}
+			$("#affiliations_submit_btn").html("Saving All ...");
+			$("#affiliations_submit_btn").attr("disabled",true);
+			$("#affiliations_form").submit();
+		}
+
+
+		$("#affiliations_form").on("submit",function(event){
+			var affiliations = [];
+			event.preventDefault();
+			var affilations_form = buildForm("affiliations_form");
+			for (const key of Object.keys(affilations_form)) {
+				var value = affilations_form[""+key];
+				if(value.trim() != ''){	
+					affiliations.push(value)
+				}
+			}
+			console.log(affiliations);
+			var url = "/api/client/auth/profile/"+user.id;
+			var form = {
+				professional_associations:affiliations
+			}
+			makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
+		})
+
+		document.getElementById('uploadCV').addEventListener('change', function(event) {
+			const file = event.target.files[0];
+			if (file) {
+			const reader = new FileReader();
+			// Set up the reader to read the file as a data URL (base64)
+			reader.readAsDataURL(file);
+			reader.onload = function() {
+				const base64String = reader.result;
+				// Optionally, you could log or use the base64 string for other purposes
+				var url = "/api/client/auth/profile/"+user.id;
+				var form = {
+					resume:base64String
+				}
+				console.log(form);
+				makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
+			};
+
+			reader.onerror = function(error) {
+				console.error('Error: ', error);
+			};
+			} else {
+			console.log('No file selected');
+			}
+		});
+
+		</script>
+	</div> 
+	<!-- /.main-page-wrapper -->
+</body>
+
+</html>
