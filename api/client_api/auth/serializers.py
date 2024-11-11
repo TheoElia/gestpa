@@ -51,7 +51,6 @@ class AccountSerializer(serializers.ModelSerializer):
             data["settings"] = PersonalSettingsSerializer(instance.settings).data
         if instance.region_of_institution:
             data["region_of_institution_name"] = instance.region_of_institution.name 
-        data["subscribed"] = False
         return data
 
 
@@ -228,7 +227,7 @@ class SignupSerializer(serializers.Serializer):
         password = self.validated_data["password"]
         membership_type = self.validated_data["membership_type"]
         # create user
-        user = Account(email=email,membership_type=membership_type,date_joined=timezone.now())
+        user = Account(email=email,membership_type=membership_type,date_joined=timezone.now(),username=email)
         user.set_password(password)
         user.save()
         self.validated_data["user"] = user

@@ -186,7 +186,7 @@ class Account(TimeStamp, AbstractBaseUser):
     middle_name = models.CharField(null=True, max_length=255, blank=True)
     gender = models.CharField(max_length=15, choices=GENDER_CHOICES, null=True,blank=True)
     email = models.EmailField(unique=True, db_index=True, null=True)
-    phone_number = PhoneNumberField(null=True)
+    phone_number = PhoneNumberField(null=True,blank=True)
     user_img = models.ImageField(null=True, blank=True, upload_to="profile_photos")
     date_of_birth = models.DateField(null=True, blank=True)
     current_institution = models.CharField(null=True, max_length=255, blank=True)
@@ -206,13 +206,14 @@ class Account(TimeStamp, AbstractBaseUser):
         max_length=15, null=True, choices=STATUS_CHOICES, default=ACTIVE
     )
     date_joined = models.DateTimeField(null=True,blank=True,help_text="Date the user joined the platform.")
-    slug = models.CharField(max_length=200, null=True)
+    slug = models.CharField(max_length=200, null=True,blank=True)
     last_visit = models.DateTimeField(null=True,blank=True)
     last_login = models.DateTimeField(null=True,blank=True)
     current_profile = models.CharField(max_length=25,null=True,default=GSET_MEMBER,choices=PROFILES)
     professional_associations = models.JSONField(null=True,blank=True)
     resume = models.FileField(null=True, blank=True, upload_to="resumes")
     membership_type = models.CharField(max_length=25,null=True,default=PROFESSIONAL_TEACHER,choices=MEMBERSHIP_TYPES)
+    subscribed = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.id} {self.first_name} >> {self.email} :: {self.account_type}"
