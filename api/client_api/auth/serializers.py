@@ -51,6 +51,7 @@ class AccountSerializer(serializers.ModelSerializer):
             data["settings"] = PersonalSettingsSerializer(instance.settings).data
         if instance.region_of_institution:
             data["region_of_institution_name"] = instance.region_of_institution.name 
+        data["subscribed"] = False
         return data
 
 

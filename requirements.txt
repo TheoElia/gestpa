@@ -34,3 +34,5 @@ firebase-admin==6.5.0
 django-froala-editor==4.3.0
 python-dotenv
 psycopg2-binary
+social-auth-app-django 
+oauthlib

@@ -197,7 +197,7 @@
 					</div>
 				</header>
 				<!-- End Header -->
-
+                <div id="jobs" hidden>
 				<h2 class="main-title">Jobs</h2>
 				<!-- USER PROFILE STARTS -->
 				<div class="row">
@@ -234,6 +234,81 @@
                     
                     
                 </div>
+                </div>
+
+                <div id="membership" hidden>
+					<h2 class="main-title">Membership</h2>
+
+					<div class="membership-plan-wrapper mb-20">
+						<div class="row gx-0">
+							<div class="col-xxl-7 col-lg-6 d-flex flex-column">
+								<div class="column w-100 h-100">
+									<h4>Current Plan (Gold)</h4>
+									<p>Unlimited access to our legal document library and online rental application tool, billed monthly.</p>
+								</div>
+							</div>
+							<div class="col-xxl-5 col-lg-6 d-flex flex-column">
+								<div class="column border-left w-100 h-100">
+									<div class="d-flex">
+										<h3 class="price m0">$29</h3>
+										<div class="ps-4 flex-fill">
+											<h6>Monthly Plan</h6>
+											<span class="text1 d-block">Your subscription renews <span class="fw-500">July 12th, 2023</span></span>
+											<a href="#" class="cancel-plan tran3s">Cancel Current Plan</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.membership-plan-wrapper -->
+	
+					<section class="pricing-section">
+						<div class="row justify-content-center">
+							<div class="col-lg-4 col-md-6">
+								<div class="pricing-card-one border-0 mt-25">
+									<div class="pack-name">Standard</div>
+									<div class="price fw-500">0</div>
+									<ul class="style-none">
+										<li>15 job posting </li>
+										<li>7 featured job </li>
+										<li>Job post live for 30 days </li>
+									</ul>
+									<a href="#" class="get-plan-btn tran3s w-100 mt-30">Choose Plan</a>
+								</div>
+								<!-- /.pricing-card-one -->
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="pricing-card-one popular-two mt-25">
+									<div class="popular-badge">popular</div>
+									<div class="pack-name">Gold</div>
+									<div class="price fw-500"><sub>$</sub> 27.<sup>99</sup></div>
+									<ul class="style-none">
+										<li>30 job posting </li>
+										<li>15 featured job </li>
+										<li>Job post live for 60 days </li>
+									</ul>
+									<a href="#" class="get-plan-btn tran3s w-100 mt-30">Choose Plan</a>
+								</div>
+								<!-- /.pricing-card-one -->
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="pricing-card-one border-0 mt-25">
+									<div class="pack-name">Diamond</div>
+									<div class="price fw-500"><sub>$</sub> 39.<sup>99</sup></div>
+									<ul class="style-none">
+										<li>60 job posting </li>
+										<li>30 featured job </li>
+										<li>Job post live for 130 days </li>
+									</ul>
+									<a href="#" class="get-plan-btn tran3s w-100 mt-30">Choose Plan</a>
+								</div>
+								<!-- /.pricing-card-one -->
+							</div>
+						</div>
+					</section>
+					<!-- ./pricing-section -->
+				</div>
 				
 		</div>
 		<!-- /.dashboard-body -->
@@ -296,7 +371,7 @@
 		<script src="/static/js/utils.js"></script>
 		<script src="/static/js/api_calls.js"></script>
 		<script>
-			var token = localStorage.getItem("auth_token");
+						var token = localStorage.getItem("auth_token");
 			var user;
 			// if there's no access token, they must login
 			var headers = {Authorization: "Bearer "+token}
@@ -306,45 +381,12 @@
 				makeGetApiRequestwithToken(profileInfoCallback,url,headers)
 			}
 
-		function buildAffiliation(affiliation){
-			var _id = generateRandomString();
-			return `<div class="dash-input-wrapper mb-20" id="${_id}">
-                        <label for="">Association Name</label>
-						<div class="row">
-						<div class="col-10">
-							<input type="text" placeholder="eg: GES" value="${affiliation}" required>
-						</div>
-							<div class="col-2">
-								<button type="button" class="dash-btn-one" onclick="deleteAffiliationBox('${_id}','${affiliation}')"><i class="bi bi-bin"></i> Delete</button>
-							</div>	
-						</div>
-                        
-                    </div>`;
-		}
 
-		function profileInfoCallback(response){
+            function profileInfoCallback(response){
 				if(response.status >= 200 && response.status <=300){
 					user = response.data;
-					var fields = ["first_name","last_name","email",
-					"middle_name","phone_number","date_of_birth","current_institution","short_bio","linkedin_profile","short_bio"];
-					fields.forEach(element => {
-						setFieldValue(element,user[""+element]);
-					});
-					if(exists(user.region_of_institution)){
-						$("#region_of_institution").val(user.region_of_institution);
-						var option = user.region_of_institution_name;
-						console.log(option);
-						$("#region").append(option);
-						
-					}else{
-						var option = `None Selected`;
-						console.log(option);
-						$("#region").append(option);
-						
-					}
+					console.log(user);
 					if(exists(user.user_img)){
-						$("#photo_preview").attr("src",user.user_img);
-						$("#photo_preview").attr("data-src",user.user_img);
 						$("#profile_photo").attr("src",user.user_img);
 						$("#profile_photo").attr("data-src",user.user_img);
 						
@@ -354,19 +396,15 @@
 					}else{
 						$("#profile-dropdown").html(user.email);
 					}
-					if(exists(user.professional_associations)){
-						user.professional_associations.forEach(affiliation => {
-							$("#affiliations").prepend(buildAffiliation(affiliation));
-						});
+					// has the user paid
+					if(user.subscribed == true){
+						// we can safely show the courses
+						$("#courses").attr("hidden",false);
+					}else{
+						// membership
+						$("#membership").attr("hidden",false);
 					}
-					if(exists(user.resume)){
-						var html = `<div class="attached-file d-flex align-items-center justify-content-between">
-								<span><a href="${user.resume}">${user.resume}</a></span>
-								<a href="#" class="remove-btn"><i class="bi bi-x"></i></a>
-							</div>`;
-						$("#resumes").html(html);
-					}
-					console.log(response.data);
+					
 				}
 				if(response.status == 400){
 					// bad request, look for errors
@@ -376,174 +414,7 @@
 			}
 		}
 
-		function profileInfoUpdateCallback(response){
-			$("#update_profile_submit_btn").html("Save Changes");
-			$("#update_profile_submit_btn").attr("disabled",false);
-			$("#affiliations_submit_btn").html("Save All");
-			$("#affiliations_submit_btn").attr("disabled",false);
-				if(response.status >= 200 && response.status <=300){
-					user = response.data;
-					if(exists(user.user_img)){
-						$("#photo_preview").attr("src",user.user_img);
-						$("#photo_preview").attr("data-src",user.user_img);
-						$("#profile_photo").attr("src",user.user_img);
-						$("#profile_photo").attr("data-src",user.user_img);
-					}
-					if(exists(user.resume)){
-						var html = `<div class="attached-file d-flex align-items-center justify-content-between">
-								<span><a href="${user.resume}">${user.resume}</a></span>
-								<a href="#" class="remove-btn"><i class="bi bi-x"></i></a>
-							</div>`;
-						$("#resumes").html(html);
-					}
-				}
-				if(response.status == 400){
-					console.log(response);
-					// bad request, look for errors
-					response.data.non_field_errors.forEach(element => {
-						errors += element
-					});
-			}
-		}
-
-		function submitUpdateProfileForm(){
-			$("#update_profile_submit_btn").html("Updating ...");
-			$("#update_profile_submit_btn").attr("disabled",true);
-			$("#update_profile_form").submit();
-			$("#errors").attr("hidden",true);
-		}
-
-		$("#update_profile_form").on("submit",function(event){
-			var Allform = buildForm("update_profile_form");
-			var form = {};
-			var affilations = [];
-			Object.entries(Allform).forEach(([key, value]) => {
-				if(exists(value) && value != ""){	
-						form[""+key] = value;	
-				}
-			});
-			form["affiliations"] = affilations;
-			var url = "/api/client/auth/profile/"+user.id;
-			console.log(form);
-			makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
-			
-		});
-
-		document.getElementById('uploadImg').addEventListener('change', function(event) {
-			const file = event.target.files[0];
-			if (file) {
-			const reader = new FileReader();
-			// Set up the reader to read the file as a data URL (base64)
-			reader.readAsDataURL(file);
-			reader.onload = function() {
-				const base64String = reader.result;
-				// Optionally, you could log or use the base64 string for other purposes
-				var url = "/api/client/auth/profile/"+user.id;
-
-				var form = {
-					user_img:base64String
-				}
-
-				makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
-			};
-
-			reader.onerror = function(error) {
-				console.error('Error: ', error);
-			};
-			} else {
-			console.log('No file selected');
-			}
-		});
-
-		function addNewAffiliationBox(){
-			var _id = generateRandomString();
-			var html = `<div class="dash-input-wrapper mb-20" id="${_id}">
-							<label for="">Association Name</label>
-							<div class="row">
-								<div class="col-10">
-									<input type="text" name="affiliation_${_id}" placeholder="eg: GES" required>
-								</div>
-								<div class="col-2">
-									<button href="javascript:void(0);" class="dash-btn-one" onclick="removeAffiliationBox('${_id}')"><i class="bi bi-bin"></i> Remove</button>
-								</div>	
-							</div>
-							
-							
-						</div>`;
-			$("#affiliations").append(html); 
-		}
-		function removeAffiliationBox(_id){
-			$("#"+_id).remove();
-		}
-		function deleteAffiliationBox(_id,affiliation){
-			var new_affiliations = user.professional_associations.filter(item => item !== affiliation);
-			var url = "/api/client/auth/profile/"+user.id;
-			var form = {
-				professional_associations:new_affiliations
-			}
-			makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
-			$("#"+_id).remove();
-		}
-
-		function submitAffiliations(){
-			var affilations_form = buildForm("affiliations_form");
-			for (const key of Object.keys(affilations_form)) {
-				var value = affilations_form[""+key];
-				console.log(value);
-				if(value.trim() == ''){	
-					console.log("here")
-					toast("Fill All Fields",3000);
-					return false;
-				}
-			}
-			$("#affiliations_submit_btn").html("Saving All ...");
-			$("#affiliations_submit_btn").attr("disabled",true);
-			$("#affiliations_form").submit();
-		}
-
-
-		$("#affiliations_form").on("submit",function(event){
-			var affiliations = [];
-			event.preventDefault();
-			var affilations_form = buildForm("affiliations_form");
-			for (const key of Object.keys(affilations_form)) {
-				var value = affilations_form[""+key];
-				if(value.trim() != ''){	
-					affiliations.push(value)
-				}
-			}
-			console.log(affiliations);
-			var url = "/api/client/auth/profile/"+user.id;
-			var form = {
-				professional_associations:affiliations
-			}
-			makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
-		})
-
-		document.getElementById('uploadCV').addEventListener('change', function(event) {
-			const file = event.target.files[0];
-			if (file) {
-			const reader = new FileReader();
-			// Set up the reader to read the file as a data URL (base64)
-			reader.readAsDataURL(file);
-			reader.onload = function() {
-				const base64String = reader.result;
-				// Optionally, you could log or use the base64 string for other purposes
-				var url = "/api/client/auth/profile/"+user.id;
-				var form = {
-					resume:base64String
-				}
-				console.log(form);
-				makePutApiRequestwithToken(profileInfoUpdateCallback,url,form,headers)
-			};
-
-			reader.onerror = function(error) {
-				console.error('Error: ', error);
-			};
-			} else {
-			console.log('No file selected');
-			}
-		});
+        
 
 		</script>
 	</div> 
