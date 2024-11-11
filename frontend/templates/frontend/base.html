@@ -435,9 +435,7 @@
 					$("#signup_success").html(success);
 					// redirect the person to dashboard
 					// set access token
-					var headers = response.headers;
-					localStorage.setItem("auth_token",headers.set-auth-token);
-					window.location.assign("/member-dashboard");
+					window.location.assign("/login");
 				}
 				if(response.status == 400){
 					// bad request, look for errors

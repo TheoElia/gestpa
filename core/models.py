@@ -167,6 +167,13 @@ class Account(TimeStamp, AbstractBaseUser):
         (GSET_MEMBER,"GSET Member"),
     )
 
+    STUDENT = "student"
+    PROFESSIONAL_TEACHER = "professional_teacher"
+    MEMBERSHIP_TYPES = Choices(
+        (STUDENT,"Student"),
+        (PROFESSIONAL_TEACHER,"Professional Teacher")
+    )
+
     class Meta:
         verbose_name = "GSET User"
         verbose_name_plural = "GSET Users"
@@ -205,6 +212,7 @@ class Account(TimeStamp, AbstractBaseUser):
     current_profile = models.CharField(max_length=25,null=True,default=GSET_MEMBER,choices=PROFILES)
     professional_associations = models.JSONField(null=True,blank=True)
     resume = models.FileField(null=True, blank=True, upload_to="resumes")
+    membership_type = models.CharField(max_length=25,null=True,default=PROFESSIONAL_TEACHER,choices=MEMBERSHIP_TYPES)
 
     def __str__(self):
         return f"{self.id} {self.first_name} >> {self.email} :: {self.account_type}"
@@ -394,3 +402,63 @@ class Chapter(TimeStamp):
         db_table = "chapter"
 
     
+
+class Job(TimeStamp):
+    FULL_TIME = "full_time"
+    PART_TIME = "part_time"
+    CONTRACT = "contract"
+    TEMPORARY = "temporary"
+    INTERNSHIP = "internship"
+    NATIONAL_SERVICE = "national_service"
+    JOP_TYPES = Choices(
+        (FULL_TIME,"Full Time"),
+        (PART_TIME,"Part Time"),
+        (CONTRACT,"Contract"),
+        (TEMPORARY,"Temporary"),
+        (INTERNSHIP,"Internship"),
+        (NATIONAL_SERVICE,"National Service")
+    )
+    REMOTE = "remote"
+    ON_SITE = "on_site"
+    HYBRID = "hybrid"
+    LOCATIONS = Choices(
+        (REMOTE,"Remote"),
+        (ON_SITE,"On Site"),
+        (HYBRID,"Hybrid")
+    )
+    ENTRY_LEVEL = "entry_level"
+    MID_LEVEL = "mid_level"
+    SENIOR_LEVEL = "senior_level"
+
+    EXPERIENCE_LEVELS = Choices(
+        (ENTRY_LEVEL,"Entry Level"),
+        (MID_LEVEL,"Mid Level"),
+        (SENIOR_LEVEL,"Senior Level")
+    )
+    title = models.CharField(max_length=255, null=False, blank=False)
+    cover_image = models.ImageField(null=True,upload_to="jobs")
+    description = models.TextField(null=True, blank=True)
+    company = models.CharField(max_length=255, null=True, blank=True)
+    location = models.CharField(max_length=255, null=True, blank=True,choices=LOCATIONS)
+    job_type = models.CharField(
+        max_length=50,
+        choices=JOP_TYPES,
+        default=FULL_TIME
+    )
+    salary = models.CharField(max_length=100, null=True, blank=True)  # Can be numeric or descriptive
+    requirements = models.TextField(null=True, blank=True)  # Required skills or qualifications
+    responsibilities = models.TextField(null=True, blank=True)  # Job responsibilities
+    application_deadline = models.DateTimeField(null=True, blank=True)
+    is_active = models.BooleanField(default=True)  # To activate or deactivate the job post
+    experience_level = models.CharField(
+        max_length=50,
+        choices=EXPERIENCE_LEVELS,
+        default=ENTRY_LEVEL
+    )
+    hiring_manager_email = models.EmailField(null=True, blank=True)
+    
+    class Meta:
+        db_table = "job"
+
+    def __str__(self):
+        return self.title

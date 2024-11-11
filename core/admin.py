@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.admin import register
 from .forms import ChapterCreationForm,ChapterChangeForm
 
-from core.models import Account, AdminUser, Chapter, Course, Image
+from core.models import Account, AdminUser, Chapter, Course, Image, Job
 from django.contrib.auth.admin import UserAdmin
 
 # Register your models here.
@@ -29,4 +29,8 @@ class AdminUserAdmin(admin.ModelAdmin):
 
 @register(Account)
 class AccountAdmin(admin.ModelAdmin):
+    pass
+
+@register(Job)
+class JobAdmin(admin.ModelAdmin):
     pass

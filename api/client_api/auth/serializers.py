@@ -204,6 +204,7 @@ class CompletSignupSerializer(serializers.Serializer):
 class SignupSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True)
     password = serializers.CharField(required=True)
+    membership_type = serializers.CharField(required=True)
 
     class Meta:
         ref_name = "client-signup"
@@ -224,8 +225,9 @@ class SignupSerializer(serializers.Serializer):
     def save(self):
         email = self.validated_data["email"]
         password = self.validated_data["password"]
+        membership_type = self.validated_data["membership_type"]
         # create user
-        user = Account(email=email)
+        user = Account(email=email,membership_type=membership_type,date_joined=timezone.now())
         user.set_password(password)
         user.save()
         self.validated_data["user"] = user
