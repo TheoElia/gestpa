@@ -437,6 +437,7 @@ class Job(TimeStamp):
     )
     title = models.CharField(max_length=255, null=False, blank=False)
     cover_image = models.ImageField(null=True,upload_to="jobs")
+    overview = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     company = models.CharField(max_length=255, null=True, blank=True)
     location = models.CharField(max_length=255, null=True, blank=True,choices=LOCATIONS)
@@ -448,6 +449,7 @@ class Job(TimeStamp):
     salary = models.CharField(max_length=100, null=True, blank=True)  # Can be numeric or descriptive
     requirements = models.TextField(null=True, blank=True)  # Required skills or qualifications
     responsibilities = models.TextField(null=True, blank=True)  # Job responsibilities
+    benefits = models.TextField(null=True, blank=True)  # Job Benefits
     application_deadline = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)  # To activate or deactivate the job post
     experience_level = models.CharField(

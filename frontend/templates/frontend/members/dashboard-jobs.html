@@ -109,13 +109,13 @@
 							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_2.svg" alt="" class="lazy-img">
 							<span>My Profile</span>
 						</a></li>
-                        <li><a href="javascript:void(0);" class="d-flex w-100 align-items-center active">
-							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_3_active.svg" alt="" class="lazy-img">
+                        <li><a href="/member-courses" class="d-flex w-100 align-items-center">
+							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_3.svg" alt="" class="lazy-img">
 							<span>Courses</span>
 						</a></li>
 						
-						<li><a href="/member-jobs" class="d-flex w-100 align-items-center">
-							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_6.svg" alt="" class="lazy-img">
+						<li><a href="javascript:void(0);" class="d-flex w-100 align-items-center active">
+							<img src="/static/images/lazy.svg" data-src="/static/dashboard/images/icon/icon_6_active.svg" alt="" class="lazy-img">
 							<span>Jobs</span>
 						</a></li>
 						<li><a href="javascript:void(0);" class="d-flex w-100 align-items-center" data-bs-toggle="modal" data-bs-target="#deleteModal">
@@ -198,26 +198,37 @@
 				</header>
 				<!-- End Header -->
 
-				<h2 class="main-title">Courses</h2>
+				<h2 class="main-title">Jobs</h2>
 				<!-- USER PROFILE STARTS -->
 				<div class="row">
-                    {% for course in courses %}
-                    <div class="col-md-4">
-                        <article class="blog-meta-two box-layout mb-50 lg-mb-30">
-                            <figure class="post-img m0">
-                                <a href="/member-chapter/{{course.id}}/" class="w-100 d-block"><img src="{{course.cover_image.url}}" data-src="{{course.cover_image.url}}" alt="" class="lazy-img w-100 tran4s"></a>
-                                <a href="/member-chapter/{{course.id}}/" class="tags fw-500">{{course.name}}</a>
-                            </figure>
-                            <div class="post-data mt-35">
-                                <div class="date"><span class="fw-500 text-dark"></span> <a href="/member-chapter/{{course.id}}/">{{course.created | date}}</a></div>
-                                <a href="/member-chapter/{{course.id}}/"><h4 class="tran3s blog-title">{{course.name}}</h4></a>
-                                <a href="/member-chapter/{{course.id}}/" class="continue-btn tran3s d-flex align-items-center">
-                                    <span class="fw-500 me-2">Explore Course</span>
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
+                    {% for job in jobs %}
+                    <div class="job-list-one style-two position-relative border-style mb-20">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-xl-3 col-lg-4">
+                                <div class="job-title d-flex align-items-center">
+                                    <a href="/jobs/{{job.id}}" class="logo md-mb-20"><img src="images/lazy.svg" data-src="{{job.cover_image.url}}" alt="" class="lazy-img m-auto"></a>
+                                    <a href="/jobs/{{job.id}}" class="title fw-500 tran3s ps-3 ps-lg-0">{{job.title}}</a>
+                                </div>
                             </div>
-                        </article>
-                        <!-- /.blog-meta-two -->
+                            <div class="col-lg-3 col-md-4 col-sm-6 ms-auto">
+                                <a href="/jobs/{{job.id}}" class="job-duration fw-500">{{job.job_type}}</a>
+                                <div class="job-salary"><span class="fw-500 text-dark">{{job.salary}}</span> / {{job.experience_level}}</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 ms-auto">
+                                <div class="job-location xs-mt-10">
+                                    <a href="/jobs/{{job.id}}">{{job.location}}</a>
+                                </div>
+                                <div class="job-category">
+                                    <a href="/jobs/{{job.id}}">{{job.company}}</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4">
+                                <div class="btn-group d-flex align-items-center justify-content-md-end sm-mt-20">
+                                    <!-- <a href="job-details-v2.html" class="save-btn text-center rounded-circle tran3s me-3" title="Save Job"><i class="bi bi-bookmark-dash"></i></a> -->
+                                    <a href="/jobs/{{job.id}}" class="apply-btn text-center tran3s">APPLY</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {% endfor %}
                     

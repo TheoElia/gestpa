@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from core.models import Course, Region
+from core.models import Course, Job, Region
 
 # Create your views here.
 def index(request):
@@ -43,4 +43,17 @@ def dashboard_course(request,id):
     args["course"] = course
     first_chapter = course.chapters.first()
     args["first_chapter"] = first_chapter
+    return render(request,template,args)
+
+def dashboard_jobs(request):
+    template = "frontend/members/dashboard-jobs.html"
+    args = {}
+    args["jobs"] = Job.objects.filter(is_active=True)
+    return render(request,template,args)
+
+def job(request,id):
+    template = "frontend/job.html"
+    job = Job.objects.get(id=id)
+    args = {}
+    args["job"] = job
     return render(request,template,args)
