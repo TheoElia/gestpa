@@ -57,14 +57,14 @@
 									<div class="block-numb text-center fw-500 text-white rounded-circle me-2">1</div>
 									<h4 class="block-title">Overview</h4>
 								</div>
-								<p>{{job.overview}}</p>
+								<p>{% autoescape off %}{{job.overview}}{% endautoescape %}</p>
 							</div>
 							<div class="post-block border-style mt-30">
 								<div class="d-flex align-items-center">
 									<div class="block-numb text-center fw-500 text-white rounded-circle me-2">2</div>
 									<h4 class="block-title">Job Description</h4>
 								</div>
-								<p>{{job.description}}</p>
+								<p>{% autoescape off %}{{job.description}}{% endautoescape %}</p>
 							</div>
 							<div class="post-block border-style mt-40 lg-mt-30">
 								<div class="d-flex align-items-center">
@@ -72,7 +72,7 @@
 									<h4 class="block-title">Responsibilities</h4>
 								</div>
 								<ul class="list-type-one style-none mb-15">
-									{{job.responsibilities}}
+									{% autoescape off %}{{job.responsibilities}}{% endautoescape %}
 								</ul>
 							</div>
 							<div class="post-block border-style mt-40 lg-mt-30">
@@ -81,7 +81,7 @@
 									<h4 class="block-title">Required Skills:</h4>
 								</div>
 								<ul class="list-type-two style-none mb-15">
-									{{job.requirements}}
+									{% autoescape off %}{{job.requirements}}{% endautoescape %}
 								</ul>
 							</div>
 							<div class="post-block border-style mt-40 lg-mt-30">
@@ -90,7 +90,7 @@
 									<h4 class="block-title">Benefits:</h4>
 								</div>
 								<ul class="list-type-two style-none mb-15">
-									{{job.benefits}}
+									{% autoescape off %}{{job.benefits}}{% endautoescape %}
 								</ul>
 							</div>
 						</div>
@@ -162,58 +162,24 @@
 					</div>
 
 					<div class="related-job-slider">
+						{% for rel_job in jobs %}
 						<div class="item">
 							<div class="job-list-two style-two position-relative">
-								<a href="job-details-v2.html" class="logo"><img src="/static/images/logo/media_22.png" alt="" class="m-auto"></a>
-								<a href="job-details-v2.html" class="save-btn text-center rounded-circle tran3s" title="Save Job"><i class="bi bi-bookmark-dash"></i></a>
-								<div><a href="job-details-v2.html" class="job-duration fw-500">Fulltime</a></div>
-								<div><a href="job-details-v2.html" class="title fw-500 tran3s">Lead designer & expert in maya 3D</a></div>
-								<div class="job-salary"><span class="fw-500 text-dark">$300-$450</span> / Week</div>
+								<a href="/jobs/{{rel_job.id}}" class="logo"><img src="{{rel_job.cover_image.url}}" alt="" class="m-auto"></a>
+								<a href="/jobs/{{rel_job.id}}" class="save-btn text-center rounded-circle tran3s" title="Save Job"><i class="bi bi-bookmark-dash"></i></a>
+								<div><a href="/jobs/{{rel_job.id}}" class="job-duration fw-500">{{rel_job.job_type}}</a></div>
+								<div><a href="/jobs/{{rel_job.id}}" class="title fw-500 tran3s">{{rel_job.title}}</a></div>
+								<div class="job-salary"><span class="fw-500 text-dark">{{rel_job.salary}}</div>
 								<div class="d-flex align-items-center justify-content-between mt-auto">
-									<div class="job-location"><a href="job-details-v2.html">USA, California</a></div>
-									<a href="job-details-v2.html" class="apply-btn text-center tran3s">APPLY</a>
+									<div class="job-location"><a href="/jobs/{{rel_job.id}}">{{rel_job.location}}</a></div>
+									<a href="/jobs/{{rel_job.id}}" class="apply-btn text-center tran3s">APPLY</a>
 								</div>
 							</div> <!-- /.job-list-two -->
 						</div>
-						<div class="item">
-							<div class="job-list-two style-two position-relative">
-								<a href="job-details-v2.html" class="logo"><img src="/static/images/logo/media_23.png" alt="" class="m-auto"></a>
-								<a href="job-details-v2.html" class="save-btn text-center rounded-circle tran3s" title="Save Job"><i class="bi bi-bookmark-dash"></i></a>
-								<div><a href="job-details-v2.html" class="job-duration fw-500 part-time">Part-time</a></div>
-								<div><a href="job-details-v2.html" class="title fw-500 tran3s">Developer & expert in c++ & java.</a></div>
-								<div class="job-salary"><span class="fw-500 text-dark">$10-$15</span> / Hour</div>
-								<div class="d-flex align-items-center justify-content-between mt-auto">
-									<div class="job-location"><a href="job-details-v2.html">USA, Alaska</a></div>
-									<a href="job-details-v2.html" class="apply-btn text-center tran3s">APPLY</a>
-								</div>
-							</div> <!-- /.job-list-two -->
-						</div>
-						<div class="item">
-							<div class="job-list-two style-two position-relative">
-								<a href="job-details-v2.html" class="logo"><img src="/static/images/logo/media_24.png" alt="" class="m-auto"></a>
-								<a href="job-details-v2.html" class="save-btn text-center rounded-circle tran3s" title="Save Job"><i class="bi bi-bookmark-dash"></i></a>
-								<div><a href="job-details-v2.html" class="job-duration fw-500 part-time">Part-time</a></div>
-								<div><a href="job-details-v2.html" class="title fw-500 tran3s">Marketing specialist in SEO & Affiliate. </a></div>
-								<div class="job-salary"><span class="fw-500 text-dark">$40k</span> / Yearly</div>
-								<div class="d-flex align-items-center justify-content-between mt-auto">
-									<div class="job-location"><a href="job-details-v2.html">AUS, Sydney</a></div>
-									<a href="job-details-v2.html" class="apply-btn text-center tran3s">APPLY</a>
-								</div>
-							</div> <!-- /.job-list-two -->
-						</div>
-						<div class="item">
-							<div class="job-list-two style-two position-relative">
-								<a href="job-details-v2.html" class="logo"><img src="/static/images/logo/media_25.png" alt="" class="m-auto"></a>
-								<a href="job-details-v2.html" class="save-btn text-center rounded-circle tran3s" title="Save Job"><i class="bi bi-bookmark-dash"></i></a>
-								<div><a href="job-details-v2.html" class="job-duration fw-500">Fulltime</a></div>
-								<div><a href="job-details-v2.html" class="title fw-500 tran3s">Lead & Product & Web Designer.</a></div>
-								<div class="job-salary"><span class="fw-500 text-dark">$2k-3k</span> / Month</div>
-								<div class="d-flex align-items-center justify-content-between mt-auto">
-									<div class="job-location"><a href="job-details-v2.html">UAE, Dubai</a></div>
-									<a href="job-details-v2.html" class="apply-btn text-center tran3s">APPLY</a>
-								</div>
-							</div> <!-- /.job-list-two -->
-						</div>
+						{% endfor %}
+						
+						
+						
 					</div>
 
 					<ul class="slider-arrows slick-arrow-one color-two d-flex justify-content-center style-none sm-mt-20">

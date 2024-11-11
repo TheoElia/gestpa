@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import register
-from .forms import ChapterCreationForm,ChapterChangeForm
+from .forms import ChapterCreationForm,ChapterChangeForm, JobCreationForm
 
 from core.models import Account, AdminUser, Chapter, Course, Image, Job
 from django.contrib.auth.admin import UserAdmin
@@ -33,4 +33,5 @@ class AccountAdmin(admin.ModelAdmin):
 
 @register(Job)
 class JobAdmin(admin.ModelAdmin):
-    pass
+    add_form = JobCreationForm
+    form = JobCreationForm

@@ -22,3 +22,18 @@ class ChapterChangeForm(ModelForm):
     class Meta:
         model = Chapter
         fields = ('title','cover_image','content','position','course')
+
+
+class JobCreationForm(ModelForm):
+    overview=forms.CharField(widget=FroalaEditor)
+    description=forms.CharField(widget=FroalaEditor)
+    responsibilities=forms.CharField(widget=FroalaEditor)
+    requirements=forms.CharField(widget=FroalaEditor)
+    benefits=forms.CharField(widget=FroalaEditor)
+    # content = forms.CharField(widget=TinyMCE())
+    class Meta:
+        model = Job
+        fields = ('title','cover_image','overview','description','responsibilities',
+                  'requirements','benefits','salary','experience_level',
+                  'company','job_type','location','application_deadline',
+                )

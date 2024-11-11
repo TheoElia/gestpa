@@ -56,4 +56,5 @@ def job(request,id):
     job = Job.objects.get(id=id)
     args = {}
     args["job"] = job
+    args["jobs"] = Job.objects.filter(is_active=True).exclude(id=job.id)
     return render(request,template,args)
